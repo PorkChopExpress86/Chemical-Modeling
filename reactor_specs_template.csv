@@ -1,0 +1,6 @@
+Reactor Name,Liquid Volume (ft3),Headspace Volume (ft3),Initial Pressure (psia),Storage Temperature (F),Reaction Temperature (F),Solvent
+R200,353.0,70.6,87.0,68.0,140.0,EO
+R300,353.0,70.6,87.0,68.0,140.0,EO
+V500,353.0,70.6,87.0,68.0,140.0,EO
+V600,353.0,70.6,87.0,68.0,140.0,EO
+V700,353.0,70.6,87.0,68.0,140.0,EO
