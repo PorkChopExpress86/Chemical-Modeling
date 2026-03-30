@@ -59,11 +59,11 @@ The default example models 1-octene reacting with 40 % aqueous sodium bisulfite,
 **Default process parameters:**
 | Material | Amount |
 |---|---|
-| 1-Octene | 7 700 lb |
-| 40 % Sodium bisulfite solution | 22 000 lb |
+| 1-Octene | 7,700 lb |
+| 40 % Sodium bisulfite solution | 22,000 lb |
 | tert-Butyl peroxyacetate | 435 lb |
 | Bisulfite feed rate | 90 lb/min |
-| Peroxide shot interval | every 2 200 lb bisulfite solution |
+| Peroxide shot interval | every 2,200 lb bisulfite solution |
 | Reaction temperature | 190 °F |
 
 ### Key assumptions
