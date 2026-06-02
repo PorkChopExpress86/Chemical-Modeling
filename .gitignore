@@ -48,3 +48,15 @@ htmlcov/
 # Project specific
 *.csv
 !reactor_specs_template.csv
+!data/reactor_specs_template.csv
+
+# Psi4 / quantum-chemistry scratch litter (written to CWD by the singleton)
+PEDRA.OUT*
+cavity.off*
+cavity.npz
+psi.*.clean
+psi4-calc.dat
+timer.dat
+*.molden
+psi4_scratch_*/
+psi4_run_*/

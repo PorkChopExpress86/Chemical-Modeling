@@ -1,0 +1,29 @@
+# Unified Conda environment for the Chemical-Modeling project.
+#
+# This is the SINGLE environment for everything: the nitrogen-solubility model,
+# app.py, and sandbox.py (Psi4 + PCM solvation, PySCF, PubChem, ASE, Streamlit).
+#
+# Python 3.11 is REQUIRED — Psi4 is conda-only and has no build for 3.12+.
+# Create/update it with:  ./scripts/setup-env.sh   (uses micromamba, clean root prefix)
+# Run things with:        ./run.sh sandbox|app|solubility|test|shell
+#
+# Versions are pinned to the tested, working stack. If a fresh solve fails months
+# from now (conda-forge garbage-collects old builds), relax the patch pins to the
+# minor version (e.g. psi4=1.10, numpy=2.4).
+name: chemmodel
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - psi4=1.10.1          # quantum chemistry engine (pulls libint, gau2grid, …)
+  - pcmsolver=1.2.3      # PCM continuum solvation for Psi4
+  - pyscf=2.13.0         # alternative QC engine (PBC, etc.)
+  - ase=3.28.0           # Atomic Simulation Environment — molecular data + MD
+  - streamlit=1.58.0     # web UI (needs st.fragment(run_every=…), st.rerun)
+  - plotly=6.6.0         # interactive charts
+  - pubchempy=1.0.5      # name → 3-D structure lookups (conda-forge build)
+  - numpy=2.4.6
+  - pandas=3.0.3
+  - scipy=1.17.1
+  - h5py=3.16.0
+  - pip                  # escape hatch only; no pip-installed deps required

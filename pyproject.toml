@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chemmodel"
+version = "0.1.0"
+description = "Chemical & reactor modelling toolkit: N2 solubility, QC engines, PES scans, ideal-reactor kinetics."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+# Pip-installable dependencies. The quantum-chemistry backends (psi4, pcmsolver,
+# pyscf, pubchempy) are conda-only and declared in environment.yml; the apps
+# degrade to demo mode when they are absent, so they are intentionally not listed
+# here. Install the package with `--no-deps` inside the conda env (see
+# scripts/setup-env.sh) to avoid pip clobbering the conda-managed stack.
+dependencies = [
+    "numpy>=1.26",
+    "ase>=3.26",
+    "streamlit>=1.40",
+    "plotly>=5.20",
+    "pandas>=2.0",
+    "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+chem-solubility = "chemmodel.solubility.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+# Tests import `chemmodel` directly from src without requiring an install.
+pythonpath = ["src"]
+testpaths = ["tests"]
